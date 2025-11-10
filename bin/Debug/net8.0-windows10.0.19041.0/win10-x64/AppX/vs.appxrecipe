@@ -30,7 +30,7 @@
     <AppXManifest Include="D:\Keys And Documents\Labs\4 Course\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-11-10T13:51:48.474</Modified>
+      <Modified>2025-11-10T15:19:11.788</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Keys And Documents\Labs\4 Course\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MauiApp1.dll">
       <PackagePath>MauiApp1.dll</PackagePath>
-      <Modified>2025-11-10T13:51:47.712</Modified>
+      <Modified>2025-11-10T15:19:10.433</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MauiApp1.exe</PackagePath>
-      <Modified>2025-11-10T13:51:47.719</Modified>
+      <Modified>2025-11-10T15:19:10.458</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Keys And Documents\Labs\4 Course\MauiApp1\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
