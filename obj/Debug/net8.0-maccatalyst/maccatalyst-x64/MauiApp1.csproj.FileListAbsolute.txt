@@ -308,3 +308,4 @@ D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-maccatalyst\maccat
 D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\MauiApp1.pdb
 D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\MauiApp1.genruntimeconfig.cache
 D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ref\MauiApp1.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\MauiApp1.sourcelink.json

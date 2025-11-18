@@ -1,12 +1,19 @@
 ﻿using System.Text.Json;
 using System.Collections.ObjectModel;
 using System.Net.Http;
+using System.Text; // ДОБАВЛЕНО: Для решения ошибки CS0103 и потенциальной работы с кодировкой
+using MauiApp1.Services;
 
 namespace MauiApp1
 {
     public partial class MainPage : ContentPage
     {
-        private HttpClient _httpClient = new HttpClient();
+        // 1. Клиент для API расписания (БЕЗ заголовков авторизации)
+        private HttpClient _scheduleHttpClient = new HttpClient();
+        // 2. Клиент для AI сервиса
+        private HttpClient _aiHttpClient = new HttpClient();
+
+        private HuggingFaceService _aiService;
         private List<Branch> _branches = new List<Branch>();
         private List<Employee> _employees = new List<Employee>();
         private ObservableCollection<ScheduleDay> _scheduleData = new ObservableCollection<ScheduleDay>();
@@ -18,6 +25,9 @@ namespace MauiApp1
             InitializeComponent();
             ScheduleCollectionView.ItemsSource = _scheduleData;
             ChatHistoryView.ItemsSource = _chatHistory;
+
+            // Инициализация AI сервиса с его отдельным клиентом
+            _aiService = new HuggingFaceService(_aiHttpClient);
             LoadBranches();
         }
 
@@ -28,7 +38,8 @@ namespace MauiApp1
                 LoadingIndicator.IsVisible = true;
                 LoadingIndicator.IsRunning = true;
 
-                var response = await _httpClient.GetStringAsync("https://api-schedule.ruc.su/api/v1/get_branches");
+                // Используем _scheduleHttpClient
+                var response = await _scheduleHttpClient.GetStringAsync("https://api-schedule.ruc.su/api/v1/get_branches");
                 _branches = JsonSerializer.Deserialize<List<Branch>>(response, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
@@ -63,7 +74,8 @@ namespace MauiApp1
                 LoadingIndicator.IsVisible = true;
                 LoadingIndicator.IsRunning = true;
 
-                var response = await _httpClient.GetStringAsync($"https://api-schedule.ruc.su/api/v1/get_employees/{branchGuid}");
+                // Используем _scheduleHttpClient
+                var response = await _scheduleHttpClient.GetStringAsync($"https://api-schedule.ruc.su/api/v1/get_employees/{branchGuid}");
                 _employees = JsonSerializer.Deserialize<List<Employee>>(response, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
@@ -91,6 +103,8 @@ namespace MauiApp1
                 return;
             }
 
+            string response = null;
+
             try
             {
                 LoadingIndicator.IsVisible = true;
@@ -101,18 +115,41 @@ namespace MauiApp1
                 var formattedDate = ScheduleDatePicker.Date.ToString("yyyy.MM.dd");
 
                 var url = $"https://api-schedule.ruc.su/api/v1/get_schedule/employee/{selectedBranch.Guid}/{selectedEmployee.GUID}/{formattedDate}";
-                var response = await _httpClient.GetStringAsync(url);
+
+                // Используем рабочий метод
+                response = await _scheduleHttpClient.GetStringAsync(url);
+
+                // Проверяем, что ответ не пустой
+                if (string.IsNullOrWhiteSpace(response))
+                {
+                    throw new Exception("Ответ от сервера расписания пустой.");
+                }
 
                 var scheduleResponse = JsonSerializer.Deserialize<ScheduleResponse>(response, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
 
-                DisplaySchedule(scheduleResponse?.Schedule);
+                if (scheduleResponse == null || scheduleResponse.Schedule == null)
+                {
+                    // Если десериализация прошла, но Schedule=null, возможно, API вернул ошибку
+                    throw new Exception("Сервер вернул данные, но расписание не найдено (Schedule=null).");
+                }
+
+                DisplaySchedule(scheduleResponse.Schedule);
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", $"Failed to load schedule: {ex.Message}", "OK");
+                // Если произошла ошибка парсинга, то response содержит что-то неверное
+                string errorMessage = $"Failed to load schedule: {ex.Message}";
+
+                // Если это ошибка парсинга JSON, добавим информацию о начале ответа
+                if (ex is System.Text.Json.JsonException)
+                {
+                    errorMessage += $"\nJSON PARSING FAILED. Response starts with: {response?.Substring(0, Math.Min(response.Length, 150))}";
+                }
+
+                await DisplayAlert("Error", errorMessage, "OK");
             }
             finally
             {
@@ -124,6 +161,7 @@ namespace MauiApp1
         private void DisplaySchedule(Dictionary<string, List<ScheduleItem>>? schedule)
         {
             _scheduleData.Clear();
+            _allScheduleItems.Clear();
 
             if (schedule == null || !schedule.Any())
             {
@@ -142,6 +180,9 @@ namespace MauiApp1
 
                 foreach (var item in day.Value)
                 {
+                    item.Data = day.Key;
+                    _allScheduleItems.Add(item);
+
                     scheduleDay.Classes.Add(new ScheduleClass
                     {
                         TimeRange = $"{item.Time_start} - {item.Time_end}",
@@ -167,7 +208,6 @@ namespace MauiApp1
             var userMessage = ChatInput.Text.Trim();
             ChatInput.Text = string.Empty;
 
-            // Добавляем сообщение пользователя
             var userChatMessage = new ChatMessage
             {
                 Sender = "Вы",
@@ -181,7 +221,6 @@ namespace MauiApp1
 
             try
             {
-                // Подготавливаем данные для AI
                 var scheduleData = _allScheduleItems.Select(item => new
                 {
                     date = item.Data,
@@ -199,23 +238,15 @@ namespace MauiApp1
                     }
                 }).ToList<object>();
 
-                // Подготавливаем историю чата
                 var chatHistory = _chatHistory.Take(_chatHistory.Count - 1).Select(msg => new
                 {
                     role = msg.Sender == "Вы" ? "user" : "assistant",
                     text = msg.Message
                 }).ToList<object>();
 
-                // Debug: Log the data being sent
-                Console.WriteLine($"Schedule Data: {JsonSerializer.Serialize(scheduleData, new JsonSerializerOptions { WriteIndented = true })}");
-                Console.WriteLine($"Chat History: {JsonSerializer.Serialize(chatHistory, new JsonSerializerOptions { WriteIndented = true })}");
-                Console.WriteLine($"User Query: {userMessage}");
+                // Вызов AI сервиса (использует _aiHttpClient)
+                var aiResponse = await _aiService.SendMessageAsync(userMessage, scheduleData, chatHistory);
 
-                // Здесь будет вызов сервиса YandexGPT
-                // var aiResponse = await _yandexGptService.SendMessageAsync(userMessage, scheduleData, chatHistory);
-                var aiResponse = "Функция AI временно недоступна";
-
-                // Добавляем ответ AI
                 var aiChatMessage = new ChatMessage
                 {
                     Sender = "AI Помощник",
@@ -227,17 +258,16 @@ namespace MauiApp1
                 };
                 _chatHistory.Add(aiChatMessage);
 
-                // Прокрутка к последнему сообщению
                 ChatHistoryView.ScrollTo(_chatHistory.Last(), null, ScrollToPosition.End, true);
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Ошибка", $"Не удалось получить ответ от AI: {ex.Message}", "OK");
+                await DisplayAlert("Ошибка", $"Не удалось получить ответ от AI (Hugging Face): {ex.Message}", "OK");
             }
         }
     }
 
-    // Вспомогательные классы
+    // Вспомогательные классы (должны быть ТОЧНО такими, как в API)
     public class Branch
     {
         public string Guid { get; set; }
