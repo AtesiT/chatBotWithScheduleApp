@@ -191,3 +191,7 @@ D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-windows10.0.19041.
 D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
 D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MauiApp1.sourcelink.json
+D:\Keys And Documents\Labs\4 Course\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll

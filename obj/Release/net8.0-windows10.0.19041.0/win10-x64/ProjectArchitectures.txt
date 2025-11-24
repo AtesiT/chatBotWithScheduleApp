@@ -1,0 +1,1 @@
+D:\Keys And Documents\Labs\4 Course\MauiApp1\MauiApp1.csproj;x64

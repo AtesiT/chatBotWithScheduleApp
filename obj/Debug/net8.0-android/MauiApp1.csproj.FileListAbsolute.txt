@@ -1058,3 +1058,12 @@ D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-android\stamp\_Gen
 D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
 D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-android\MauiApp1.sourcelink.json
 D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-android\android\assets\System.Private.CoreLib.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\bin\Debug\net8.0-android\Microsoft.Maui.Controls.HotReload.Forms.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\bin\Debug\net8.0-android\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\bin\Debug\net8.0-android\Microsoft.VisualStudio.DesignTools.TapContract.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\bin\Debug\net8.0-android\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-android\MauiApp1.csproj.Up2Date
+D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-android\android\assets\Microsoft.Maui.Controls.HotReload.Forms.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-android\android\assets\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-android\android\assets\Microsoft.VisualStudio.DesignTools.TapContract.dll
+D:\Keys And Documents\Labs\4 Course\MauiApp1\obj\Debug\net8.0-android\android\assets\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll

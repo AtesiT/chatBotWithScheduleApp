@@ -7,16 +7,24 @@
       "RelativeMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|solutionrelative:services\\huggingfaceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|d:\\keys and documents\\labs\\4 course\\mauiapp1\\mauiapp1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|solutionrelative:mauiapp1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|d:\\keys and documents\\labs\\4 course\\mauiapp1\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|solutionrelative:mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|d:\\keys and documents\\labs\\4 course\\mauiapp1\\services\\yandexgptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|solutionrelative:services\\yandexgptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|d:\\keys and documents\\labs\\4 course\\mauiapp1\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|d:\\keys and documents\\labs\\4 course\\mauiapp1\\mauiapp1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|solutionrelative:mauiapp1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|d:\\keys and documents\\labs\\4 course\\mauiapp1\\services\\yandexgptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3788B-CD66-482A-94D2-81CA21C8F5C1}|MauiApp1.csproj|solutionrelative:services\\yandexgptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +34,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MauiApp1.csproj",
+              "DocumentMoniker": "D:\\Keys And Documents\\Labs\\4 Course\\MauiApp1\\MauiApp1.csproj",
+              "RelativeDocumentMoniker": "MauiApp1.csproj",
+              "ToolTip": "D:\\Keys And Documents\\Labs\\4 Course\\MauiApp1\\MauiApp1.csproj",
+              "RelativeToolTip": "MauiApp1.csproj",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAwCYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-21T08:34:22.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MauiApp1",
+              "DocumentMoniker": "D:\\Keys And Documents\\Labs\\4 Course\\MauiApp1\\MauiApp1.csproj",
+              "RelativeDocumentMoniker": "MauiApp1.csproj",
+              "ToolTip": "D:\\Keys And Documents\\Labs\\4 Course\\MauiApp1\\MauiApp1.csproj",
+              "RelativeToolTip": "MauiApp1.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-20T08:54:23.022Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -40,14 +73,14 @@
               "RelativeDocumentMoniker": "Services\\HuggingFaceService.cs",
               "ToolTip": "D:\\Keys And Documents\\Labs\\4 Course\\MauiApp1\\Services\\HuggingFaceService.cs",
               "RelativeToolTip": "Services\\HuggingFaceService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T16:00:01.975Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "YandexGptService.cs",
               "DocumentMoniker": "D:\\Keys And Documents\\Labs\\4 Course\\MauiApp1\\Services\\YandexGptService.cs",
               "RelativeDocumentMoniker": "Services\\YandexGptService.cs",
@@ -60,13 +93,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "D:\\Keys And Documents\\Labs\\4 Course\\MauiApp1\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "MainPage.xaml.cs",
               "ToolTip": "D:\\Keys And Documents\\Labs\\4 Course\\MauiApp1\\MainPage.xaml.cs",
               "RelativeToolTip": "MainPage.xaml.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAYwEcAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAACEBAAAAAAAAAAAAADgBAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-10T13:42:22.165Z",
               "EditorCaption": ""
@@ -79,7 +112,7 @@
               "RelativeDocumentMoniker": "MainPage.xaml",
               "ToolTip": "D:\\Keys And Documents\\Labs\\4 Course\\MauiApp1\\MainPage.xaml",
               "RelativeToolTip": "MainPage.xaml",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAkwG8AAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAQwH8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-10T13:42:20.958Z",
               "EditorCaption": ""
